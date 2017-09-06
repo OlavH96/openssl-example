@@ -22,7 +22,8 @@ public:
 
   /// Return the MD5 (128-bit) hash from input.
   static std::string md5(const std::string &input) {
-    throw std::logic_error("not yet implemented");
+    
+    return "";
   }
 
   /// Return the SHA-1 (160-bit) hash from input.
@@ -35,12 +36,20 @@ public:
 
   /// Return the SHA-256 (256-bit) hash from input.
   static std::string sha256(const std::string &input) {
-    throw std::logic_error("not yet implemented");
+    std::string hash;
+    SHA256((const unsigned char *)input.data(), input.size(), (unsigned char *) hash.data());
+
+    return hash;
   }
 
   /// Return the SHA-512 (512-bit) hash from input.
   static std::string sha512(const std::string &input) {
-    throw std::logic_error("not yet implemented");
+    
+    std::string hash;
+    
+    SHA512((const unsigned char *)input.data(), input.size(), (unsigned char *) hash.data());
+    
+    return hash;
   }
 
   /// Return key from the Password-Based Key Derivation Function 2 (PBKDF2).
